@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -30,6 +29,7 @@ import {
   sendPasswordResetEmail
 } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { Chrome, Loader2 } from 'lucide-react';
 import { createProvider } from '@/lib/data';
 import { useToast } from '@/hooks/use-toast';
@@ -164,7 +164,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background p-4">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-background p-4">
       <Tabs defaultValue="login" className="w-full max-w-md">
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="login">Login</TabsTrigger>
@@ -284,8 +284,17 @@ export default function LoginPage() {
           </Card>
         </TabsContent>
       </Tabs>
+      <div className="mt-6 text-center text-sm text-muted-foreground">
+        By signing up, you agree to our{' '}
+        <Link href="/terms-of-service" className="underline hover:text-primary">
+          Terms of Service
+        </Link>{' '}
+        and{' '}
+        <Link href="/privacy-policy" className="underline hover:text-primary">
+          Privacy Policy
+        </Link>
+        .
+      </div>
     </div>
   );
 }
-
-    
