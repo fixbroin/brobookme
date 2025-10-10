@@ -758,12 +758,12 @@ export function BookingForm({ provider }: { provider: Provider }) {
 
                 <div className="space-y-3">
                     {isPaidService && onlinePayment && payAfterService ? (
-                        <div className="grid grid-cols-2 gap-4">
-                            <Button onClick={() => handleFormSubmit('online')} size="lg" disabled={isPending}>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <Button onClick={() => handleFormSubmit('online')} size="lg" className="flex-1" disabled={isPending}>
                                 {isPending && processingMethod === 'online' ? <Loader2 className="mr-2 h-4 w-4 animate-spin"/> : <CreditCard className="mr-2 h-4 w-4"/>}
                                 Pay Online Now
                             </Button>
-                            <Button onClick={() => handleFormSubmit('later')} size="lg" variant="outline" disabled={isPending}>
+                            <Button onClick={() => handleFormSubmit('later')} size="lg" variant="outline" className="flex-1" disabled={isPending}>
                                 {isPending && processingMethod === 'later' ? <Loader2 className="mr-2 h-4 w-4 animate-spin"/> : <Banknote className="mr-2 h-4 w-4"/>}
                                 Pay After Service
                             </Button>
