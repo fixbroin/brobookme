@@ -2,4 +2,4 @@
 User-agent: *
 Disallow: /admin/
 
-Sitemap: https://slots.fixbro.in/sitemap.xml
+Sitemap: https://brobookme.com/sitemap.xml
